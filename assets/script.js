@@ -1,6 +1,4 @@
-let apiKey = '70ec33f502a6d74188161418aa41d7b2';
-
-let cityName = "Provo";
+let cityName = "Dallas";
 fetch(`http://api.openweathermap.org/geo/1.0/direct?q=${cityName}&appid=${apiKey}`)
 .then(function (response) {
 
@@ -16,17 +14,17 @@ fetch(`http://api.openweathermap.org/geo/1.0/direct?q=${cityName}&appid=${apiKey
     return {lat:cityData[0].lat, lon:cityData[0].lon}
 
 })
-.then(function(latLonData){
-    fetch(`https://api.openweathermap.org/data/2.5/onecall?lat=${latLonData.lat}&lon=${latLonData.lon}&appid=${apiKey}`)
-        .then(function (response) {
+// .then(function(latLonData){
+//     fetch(`https://api.openweathermap.org/data/2.5/onecall?lat=${latLonData.lat}&lon=${latLonData.lon}&appid=${apiKey}`)
+//         .then(function (response) {
     
-            return response.json()
+//             return response.json()
     
-        })
-        .then(function (data) {
+//         })
+//         .then(function (data) {
     
-            console.log(data);
+//             console.log(data);
     
     
-        })
-})
+//         })
+// })
