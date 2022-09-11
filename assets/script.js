@@ -6,7 +6,7 @@ let searchBtn = document.querySelector("#searchBtn");
 // document.querySelector("#currentDate").textContent = currentDate;
 
 
-let cityName = "Dallas";
+let cityName = "Denver";
 
 
     
@@ -22,42 +22,68 @@ let cityName = "Dallas";
         console.log(cityData[0].lat);
         console.log(cityData[0].lon);
         
+        let lat = (cityData[0].lat);
+        let lon = (cityData[0].lon);
         
         return {lat:cityData[0].lat, lon:cityData[0].lon}
+
         
     })
-    .then(function(latLonData){
-        return fetch(`https://api.openweathermap.org/data/2.5/forecast?lat=${latLonData.lat}&lon=${latLonData.lon}&appid=${apiKey}`)
+    .then(function(){
+        return fetch(`https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=${apiKey}`)
         .then(function (response) {
             
             return response.json()
             
         })
-        .then(function (data) {
+        .then(function (forecastData) {
             
-            console.log(data);
-            document.querySelector("#displayCity").textContent = (data.city.name);
-            document.querySelector("#currentTemp").textContent = ("Temp: " + data.list[0].main.temp);
-            document.querySelector("#currentWind").textContent = ("Wind: " + data.list[0].wind.speed);
-            document.querySelector("#currentHumidity").textContent = ("Humidity: " + data.list[0].main.humidity);
-            document.querySelector("#next1Temp").textContent = ("Temp: " + data.list[1].main.temp);
-            document.querySelector("#next1Wind").textContent = ("Wind: " + data.list[1].wind.speed);
-            document.querySelector("#next1Humidity").textContent = ("Humidity: " + data.list[1].main.humidity);
-            document.querySelector("#next2Temp").textContent = ("Temp: " + data.list[2].main.temp);
-            document.querySelector("#next2Wind").textContent = ("Wind: " + data.list[2].wind.speed);
-            document.querySelector("#next2Humidity").textContent = ("Humidity: " + data.list[2].main.humidity);
-            document.querySelector("#next3Temp").textContent = ("Temp: " + data.list[3].main.temp);
-            document.querySelector("#next3Wind").textContent = ("Wind: " + data.list[3].wind.speed);
-            document.querySelector("#next3Humidity").textContent = ("Humidity: " + data.list[3].main.humidity);
-            document.querySelector("#next4Temp").textContent = ("Temp: " + data.list[4].main.temp);
-            document.querySelector("#next4Wind").textContent = ("Wind: " + data.list[4].wind.speed);
-            document.querySelector("#next4Humidity").textContent = ("Humidity: " + data.list[4].main.humidity);
-            document.querySelector("#next5Temp").textContent = ("Temp: " + data.list[5].main.temp);
-            document.querySelector("#next5Wind").textContent = ("Wind: " + data.list[5].wind.speed);
-            document.querySelector("#next5Humidity").textContent = ("Humidity: " + data.list[5].main.humidity);
+            console.log(forecastData);
+
+            document.querySelector("#next1").textContent = (forecastData.list[4].dt_txt);
+            document.querySelector("#next1Temp").textContent = ("Temp: " + forecastData.list[4].main.temp);
+            document.querySelector("#next1Wind").textContent = ("Wind: " + forecastData.list[4].wind.speed + "mph");
+            document.querySelector("#next1Humidity").textContent = ("Humidity: " + forecastData.list[4].main.humidity + "%");
+
+            document.querySelector("#next2").textContent = (forecastData.list[12].dt_txt);
+            document.querySelector("#next2Temp").textContent = ("Temp: " + forecastData.list[12].main.temp);
+            document.querySelector("#next2Wind").textContent = ("Wind: " + forecastData.list[12].wind.speed) + "mph";
+            document.querySelector("#next2Humidity").textContent = ("Humidity: " + forecastData.list[12].main.humidity + "%");
+
+            document.querySelector("#next3").textContent = (forecastData.list[20].dt_txt);
+            document.querySelector("#next3Temp").textContent = ("Temp: " + forecastData.list[20].main.temp);
+            document.querySelector("#next3Wind").textContent = ("Wind: " + forecastData.list[20].wind.speed + "mph");
+            document.querySelector("#next3Humidity").textContent = ("Humidity: " + forecastData.list[20].main.humidity + "%");
+
+            document.querySelector("#next4").textContent = (forecastData.list[28].dt_txt);
+            document.querySelector("#next4Temp").textContent = ("Temp: " + forecastData.list[28].main.temp);
+            document.querySelector("#next4Wind").textContent = ("Wind: " + forecastData.list[28].wind.speed + "mph");
+            document.querySelector("#next4Humidity").textContent = ("Humidity: " + forecastData.list[28].main.humidity + "%");
+
+            document.querySelector("#next5").textContent = (forecastData.list[36].dt_txt);
+            document.querySelector("#next5Temp").textContent = ("Temp: " + forecastData.list[36].main.temp);
+            document.querySelector("#next5Wind").textContent = ("Wind: " + forecastData.list[36].wind.speed + "mph");
+            document.querySelector("#next5Humidity").textContent = ("Humidity: " + forecastData.list[36].main.humidity + "%");        
+        })
+        
+    
+    })
+    .then(function (){
+        return fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}`)
+        .then(function (response) {
             
-            
+            return response.json()
             
         })
-    })
+        .then(function (currentData) {
 
+            console.log(currentData);
+
+            document.querySelector("#displayCity").textContent = (currentData.city.name);
+            document.querySelector("#currentDate").textContent = (currentData.list[0].dt_txt);
+            // document.querySelector("#currentIcon").innerHTML = (currentData.list[0].weather[0].icon);
+            document.querySelector("#currentTemp").textContent = ("Temp: " + currentData.list[0].main.temp);
+            document.querySelector("#currentWind").textContent = ("Wind: " + currentData.list[0].wind.speed + "mph");
+            document.querySelector("#currentHumidity").textContent = ("Humidity: " + currentData.list[0].main.humidity + "%");
+        })
+    })
