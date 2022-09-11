@@ -5,3 +5,13 @@
 .cst-span {
     font-size: 50%;
 }
+
+ul {
+    list-style: none;
+}
+
+.cst-card-body {
+    font-size: 50%;
+    text-align: left;
+    margin-left: 1px;
+}

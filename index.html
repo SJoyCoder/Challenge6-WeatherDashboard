@@ -21,62 +21,87 @@
         <aside class="d-grid gap-2 col-3 mx-1 justify-content-start">
             <div>
                 <span>Search For City:</span>
-                <input></input>
-                <button class="btn btn-primary col-11 my-1 p-0" type="button">Search</button>
+                <input id="cityInput"></input>
+                <button class="btn btn-primary col-11 my-1 p-0" id="searchBtn" type="button">Search</button>
             </div>
             <hr>
-            <button class="btn btn-secondary p-0" type="button">Button</button>
-            <button class="btn btn-secondary p-0" type="button">Button</button>
-            <button class="btn btn-secondary p-0" type="button">Button</button>
+            <button class="btn btn-secondary p-0" id="cityBtn" type="button">City Name</button>
         </aside>
         
         <article class="d-flex row col-9 justify-content-around">
                  <div class="card">
                     <div class="card-body">
-                        <h5 class="card-title">Title</h5>
-                        <p class="card-text">Body</p>
+                        <h5 class="card-title" id="displayCity">Denton</h5>
+                        <h6 id="currentDate"></h6>
+                        <ul>
+                            <li id="currentTemp">Temp:</li>
+                            <li id="currentWind">Wind:</li>
+                            <li id="currentHumidity">Humidity:</li>
+                            <li id="currentUV">UV Index:</li>
+                        </ul>
                     </div>
                 </div>
 
             <h5>5-Day Forecast:</h5>
 
             <div class="card col-2">
-                <div class="card-body">
-                    <h5 class="card-title">Title</h5>
-                    <p class="card-text">Body</p>
+                <div class="card-body p-0 cst-card-body">
+                    <h6 class="card-title" id="next1">Title</h6>
+                    <ul>
+                        <li id="next1Temp">Temp:</li>
+                        <li id="next1Wind">Wind:</li>
+                        <li id="next1Humidity">Humidity:</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="card col-2">
+                <div class="card-body p-0 cst-card-body">
+                    <h6 class="card-title" id="next2">Title</h6>
+                    <ul>
+                        <li id="next2Temp">Temp:</li>
+                        <li id="next2Wind">Wind:</li>
+                        <li id="next2Humidity">Humidity:</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="card col-2">
+                <div class="card-body p-0 cst-card-body">
+                    <h6 class="card-title" id="next3">Title</h6>
+                    <ul>
+                        <li id="next3Temp">Temp:</li>
+                        <li id="next3Wind">Wind:</li>
+                        <li id="next3Humidity">Humidity:</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="card col-2">
+                <div class="card-body p-0 cst-card-body">
+                    <h6 class="card-title" id="next4">Title</h6>
+                    <ul>
+                        <li id="next4Temp">Temp:</li>
+                        <li id="next4Wind">Wind:</li>
+                        <li id="next4Humidity">Humidity:</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="card col-2">
+                <div class="card-body p-0 cst-card-body">
+                    <h6 class="card-title" id="next5">Title</h6>
+                    <ul>
+                        <li id="next5Temp">Temp:</li>
+                        <li id="next5Wind">Wind:</li>
+                        <li id="next5Humidity">Humidity:</li>
+                    </ul>
                 </div>
             </div>
 
-            <div class="card col-2">
-                <div class="card-body">
-                    <h5 class="card-title">Title</h5>
-                    <p class="card-text">Body</p>
-                </div>
-            </div>
-            <div class="card col-2">
-                <div class="card-body">
-                    <h5 class="card-title">Title</h5>
-                    <p class="card-text">Body</p>
-                </div>
-            </div>
-            <div class="card col-2">
-                <div class="card-body">
-                    <h5 class="card-title">Title</h5>
-                    <p class="card-text">Body</p>
-                </div>
-            </div>
-            <div class="card col-2">
-                <div class="card-body">
-                    <h5 class="card-title">Title</h5>
-                    <p class="card-text">Body</p>
-                </div>
-            </div>
+ 
 
         </article>
 
     </div>
 
-    <!-- JavaScript Bundle with Popper -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.4/moment.min.js" integrity="sha512-CryKbMe7sjSCDPl18jtJI5DR5jtkUWxPXWaLCst6QjH8wxDexfRJic2WRmRXmstr2Y8SxDDWuBO6CQC6IE4KTA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
     <script src="./assets/script.js"></script>
 </body>
