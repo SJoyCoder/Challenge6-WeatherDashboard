@@ -14,7 +14,7 @@ let lon;
     function searchWeather(){
         let cityName = cityInput.value;
 
-    fetch(`http://api.openweathermap.org/geo/1.0/direct?q=${cityName}&appid=${apiKey}`)
+    fetch(`https://api.openweathermap.org/geo/1.0/direct?q=${cityName}&appid=${apiKey}`)
     .then(function (response) {
         
         return response.json()
@@ -108,7 +108,7 @@ let lon;
             let conversion3 = conversion2.toLocaleString("en-US", {month: "numeric", day: "numeric", year: "numeric"});
             document.querySelector("#currentDate").textContent = (conversion3);
             document.querySelector("#currentIcon").src = 
-            "http://openweathermap.org/img/wn/" + currentData.weather[0].icon + "@2x.png";
+            "https://openweathermap.org/img/wn/" + currentData.weather[0].icon + "@2x.png";
             document.querySelector("#currentTemp").textContent = ("Temp: " + currentData.main.temp + "℉");
             document.querySelector("#currentWind").textContent = ("Wind: " + currentData.wind.speed + "mph");
             document.querySelector("#currentHumidity").textContent = ("Humidity: " + currentData.main.humidity + "%");
