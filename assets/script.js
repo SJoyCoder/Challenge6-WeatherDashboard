@@ -70,8 +70,7 @@ let lon;
             document.querySelector("#next5Temp").textContent = ("Temp: " + forecastData.list[39].main.temp + "℉");
             document.querySelector("#next5Wind").textContent = ("Wind: " + forecastData.list[39].wind.speed + "mph");
             document.querySelector("#next5Humidity").textContent = ("Humidity: " + forecastData.list[30].main.humidity + "%");        
-            // return {lat:cityData[0].lat, lon:cityData[0].lon}
-            // return {lat: 39.7392364, lon: -104.9848623} 
+
         })
         
     })
@@ -87,7 +86,7 @@ let lon;
             console.log(currentData);
 
             document.querySelector("#displayCity").textContent = (currentData.name);
-            document.querySelector("#currentDate").textContent = (currentData.dt);
+            document.querySelector("#currentDate").textContent = moment().format(I);
             document.querySelector("#currentIcon").src = 
             "http://openweathermap.org/img/wn/" + currentData.weather[0].icon + "@2x.png";
             document.querySelector("#currentTemp").textContent = ("Temp: " + currentData.main.temp + "℉");
