@@ -1,7 +1,7 @@
 let apiKey = '8f8c6da20ce2891419f3a9757fa8ba62';
 let cityInput = document.querySelector("#cityInput");
 let searchBtn = document.querySelector("#searchBtn");
-let cityBtn = document.querySelector("#cityBtn");
+let cityBtnList = document.querySelector("#cityBtnList");
 
 
 
@@ -127,6 +127,8 @@ let lon;
 
     function citySearch(){
     for (let i = 0; i < cityList.length; i++) {
-        cityBtn = document.createElement("button");
+        let cityBtn = document.createElement("button");
         cityBtn.textContent = localStorage.getItem("city"[i]);
+        cityBtnList.append(cityBtn);
+        cityBtn.classList.add("cityBtn");
     }}
