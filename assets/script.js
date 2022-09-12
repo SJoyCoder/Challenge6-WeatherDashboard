@@ -120,12 +120,12 @@ let lon;
 
     searchBtn.addEventListener('click', function(){
         searchWeather();
-        localStorage.setItem("city", cityInput.value);
+        cityList.push(cityInput.value);
+        localStorage.setItem("city", JSON.stringify(cityList));
     })
 
     function citySearch(){
-        if (localStorage.getItem("city") !== null)
-        cityList = JSON.parse(localStorage.getItem("city"));
-        cityBtn.textContent = cityList[i];
-    }
-    
+    for (let i = 0; i < cityList.length; i++) {
+        let city = document.createElement("button");
+        city.textContent = cityList[i];
+    }}
