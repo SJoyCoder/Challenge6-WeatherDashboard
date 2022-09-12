@@ -122,10 +122,11 @@ let lon;
         searchWeather();
         cityList.push(cityInput.value);
         localStorage.setItem("city", JSON.stringify(cityList));
+        citySearch();
     })
 
     function citySearch(){
     for (let i = 0; i < cityList.length; i++) {
-        let city = document.createElement("button");
-        city.textContent = cityList[i];
+        cityBtn = document.createElement("button");
+        cityBtn.textContent = localStorage.getItem("city"[i]);
     }}

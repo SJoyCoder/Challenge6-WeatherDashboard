@@ -17,7 +17,7 @@
    
     <div class="d-flex row">
         
-        <aside class="d-grid gap-2 col-3 mx-1 justify-content-start">
+        <aside class="d-grid gap-2 col-12 col-md-3 mx-1 justify-content-start">
             <div>
                 <span>Search For City:</span>
                 <input id="cityInput"></input>
@@ -25,12 +25,12 @@
             </div>
             <hr>
             <div id="cityBtn">
-                <button class="btn btn-secondary p-0 col-11" type="button">City Name</button>
+                <button class="btn btn-secondary p-0 col-11" type="button"></button>
             </div>
         </aside>
         
-        <article class="d-flex row col-9 justify-content-around">
-                 <div class="card">
+        <article class="d-flex row col-12 col-md-9 justify-content-around">
+                 <div class="card text-bg-secondary">
                     <div class="card-body">
                         <h5 class="card-title" id="displayCity"></h5>
                         <h6 id="currentDate"></h6>
@@ -39,15 +39,14 @@
                             <li id="currentTemp">Temp:</li>
                             <li id="currentWind">Wind:</li>
                             <li id="currentHumidity">Humidity:</li>
-                            <li id="currentUV">UV Index:</li>
                         </ul>
                     </div>
                 </div>
 
             <h5>5-Day Forecast:</h5>
 
-        <div class="row justify-content-around">
-            <div class="card text-bg-primary col-2 p-0">
+        <div class="row justify-content-around gy-1">
+            <div class="card text-bg-primary col-12 col-md-2 p-0">
                 <div class="card-body p-1 cst-card-body">
                     <h6 class="card-title" id="next1"></h6>
                     <img src="" id="next1Img"/>
@@ -58,7 +57,7 @@
                     </ul>
                 </div>
             </div>
-            <div class="card text-bg-primary col-2 p-0">
+            <div class="card text-bg-primary col-12 col-md-2 p-0">
                 <div class="card-body p-1 cst-card-body">
                     <h6 class="card-title" id="next2"></h6>
                     <img src="" id="next2Img"/>
@@ -69,7 +68,7 @@
                     </ul>
                 </div>
             </div>
-            <div class="card text-bg-primary col-2 p-0">
+            <div class="card text-bg-primary col-12 col-md-2 p-0">
                 <div class="card-body p-1 cst-card-body">
                     <h6 class="card-title" id="next3"></h6>
                     <img src="" id="next3Img"/>
@@ -80,7 +79,7 @@
                     </ul>
                 </div>
             </div>
-            <div class="card text-bg-primary col-2 p-0">
+            <div class="card text-bg-primary col-12 col-md-2 p-0">
                 <div class="card-body p-1 cst-card-body">
                     <h6 class="card-title" id="next4"></h6>
                     <img src="" id="next4Img"/>
@@ -91,7 +90,7 @@
                     </ul>
                 </div>
             </div>
-            <div class="card text-bg-primary col-2 p-0">
+            <div class="card text-bg-primary col-12 col-md-2 p-0">
                 <div class="card-body p-1 cst-card-body">
                     <h6 class="card-title" id="next5"></h6>
                     <img src="" id="next5Img"/>
