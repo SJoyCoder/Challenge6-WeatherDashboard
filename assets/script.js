@@ -7,12 +7,12 @@ let cityBtnList = document.querySelector("#cityBtnList");
 
 let cityName;
 
-let cityList = [];
+let cityList = JSON.parse(localStorage.getItem("city")) || [];
 
 let lat; 
 let lon;
-    function searchWeather(){
-        let cityName = cityInput.value;
+    function searchWeather(city){
+        let cityName = city || cityInput.value;
 
     fetch(`https://api.openweathermap.org/geo/1.0/direct?q=${cityName}&appid=${apiKey}`)
     .then(function (response) {
@@ -41,7 +41,11 @@ let lon;
             
         })
         .then(function (forecastData) {
-            
+            for (let i = 0; i < array.length; i+=8) {
+                const element = array[i];
+                
+            }
+
             console.log(forecastData);
             let conversion1 = forecastData.list[8].dt * 1000;
             let conversion2 = new Date(conversion1);
@@ -126,9 +130,18 @@ let lon;
     })
 
     function citySearch(){
-    for (let i = 0; i < cityList.length; i++) {
+        cityBtnList.innerHTML = "";
+
+        for (let i = 0; i < cityList.length; i++) {
         let cityBtn = document.createElement("button");
-        cityBtn.textContent = localStorage.getItem("city"[i]);
+        cityBtn.addEventListener('click', function(){
+            searchWeather(JSON.parse(localStorage.getItem("city"))[i]);
+        })
+        cityBtn.textContent = JSON.parse(localStorage.getItem("city"))[i];
+        console.log(typeof(localStorage.getItem("city")));
         cityBtnList.append(cityBtn);
         cityBtn.classList.add("cityBtn");
+        cityInput.value = "";
     }}
+
+    citySearch();
