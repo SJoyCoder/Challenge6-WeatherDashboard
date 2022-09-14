@@ -40,11 +40,7 @@ let lon;
             return response.json()
             
         })
-        .then(function (forecastData) {
-            for (let i = 0; i < array.length; i+=8) {
-                const element = array[i];
-                
-            }
+
 
             console.log(forecastData);
             let conversion1 = forecastData.list[8].dt * 1000;
