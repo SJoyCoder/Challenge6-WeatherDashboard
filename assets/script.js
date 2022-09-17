@@ -38,7 +38,7 @@ let lon;
         .then(function (response) {
             
             return response.json()
-            
+            ch
         })
         .then(function (forecastData) {
 
